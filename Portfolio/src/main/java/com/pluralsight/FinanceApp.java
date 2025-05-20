@@ -2,6 +2,8 @@ package com.pluralsight;
 
 import com.pluralsight.finance.*;
 
+import java.util.List;
+
 public class FinanceApp {
     public static void main(String[] args) {
 
@@ -33,7 +35,14 @@ public class FinanceApp {
         portfolio.addAsset(SavingAccount);
 
         // Output portfolio
-        System.out.println("Total portfolio value: $" + portfolio.getTotalValue());
+        System.out.println("====== Portfolio Summary ======");
+        List<Valuable> items = List.of(myhouse,ring, gold, checking, amex);
+        for (Valuable item : items) {
+            System.out.printf("%-20s : $%.2f%n", item.getClass().getSimpleName(), item.getValue());
+        }
+
+        System.out.println("============================");
+        System.out.printf("Total portfolio value: $%.2f%n", portfolio.getTotalValue());
         System.out.println("Number of items: " + portfolio.getItemCount());
 
     }
