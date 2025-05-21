@@ -20,14 +20,10 @@ public class Program {
         people.add(new Person("Tony", "Soprano", 46));
         people.add(new Person("Barry", "Allen", 25));
 
-
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter a name to search (First or Last): ");
-        String input = userInput.nextLine().trim();
-
+        int totalAge = 0;
         int maxAge = people.get(0).getAge();
         int minAge = people.get(0).getAge();
-        int totalAge = 0;
+
 
         for (Person p : people) {
             int age = p.getAge();
@@ -40,6 +36,7 @@ public class Program {
             if (age < minAge) {
                 maxAge = age;
             }
+
         }
 
         double averageAge = (double) totalAge / people.size();
@@ -47,6 +44,11 @@ public class Program {
         System.out.println("Average age: " + averageAge);
         System.out.println("Oldest age: " + maxAge);
         System.out.println("Youngest age: " + minAge);
+
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Enter a name to search (First or Last): ");
+        String input = userInput.nextLine().trim();
+
 
         List<Person> matches = new ArrayList<>();
         for (Person p : people) {
