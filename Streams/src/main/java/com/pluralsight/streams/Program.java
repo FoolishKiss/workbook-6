@@ -34,7 +34,7 @@ public class Program {
             }
 
             if (age < minAge) {
-                maxAge = age;
+                minAge = age;
             }
 
         }
